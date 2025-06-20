@@ -1,23 +1,23 @@
 package edu.gatech.seclass.jobcomparisonapp;
 
 public class ComparisonSetting {
-    private int yearlySalary;
-    private int yearlyBonus;
-    private int relocationAllowance;
-    private int wellnessFund;
-    private int dentalInsurance;
+    private int yearlySalaryWeight;
+    private int yearlyBonusWeight;
+    private int relocationAllowanceWeight;
+    private int wellnessFundWeight;
+    private int dentalInsuranceWeight;
 
-    public ComparisonSetting(int yearlySalary, int yearlyBonus, int relocationAllowance, int wellnessFund, int dentalInsurance) {
-        this.yearlySalary = yearlySalary;
-        this.yearlyBonus = yearlyBonus;
-        this.relocationAllowance = relocationAllowance;
-        this.wellnessFund = wellnessFund;
-        this.dentalInsurance = dentalInsurance;
+    public ComparisonSetting(int yearlySalaryWeight, int yearlyBonusWeight, int relocationAllowanceWeight, int wellnessFundWeight, int dentalInsuranceWeight) {
+        this.yearlySalaryWeight = yearlySalaryWeight;
+        this.yearlyBonusWeight = yearlyBonusWeight;
+        this.relocationAllowanceWeight = relocationAllowanceWeight;
+        this.wellnessFundWeight = wellnessFundWeight;
+        this.dentalInsuranceWeight = dentalInsuranceWeight;
     }
 
-    public int getYearlySalary() { return yearlySalary; }
-    public int getYearlyBonus() { return yearlyBonus; }
-    public int getRelocationAllowance() { return relocationAllowance; }
-    public int getWellnessFund() { return wellnessFund; }
-    public int getDentalInsurance() { return dentalInsurance; }
+    public int getYearlySalaryWeight() { return yearlySalaryWeight; }
+    public int getYearlyBonusWeight() { return yearlyBonusWeight; }
+    public int getRelocationAllowanceWeight() { return relocationAllowanceWeight; }
+    public int getWellnessFundWeight() { return wellnessFundWeight; }
+    public int getDentalInsuranceWeight() { return dentalInsuranceWeight; }
 }

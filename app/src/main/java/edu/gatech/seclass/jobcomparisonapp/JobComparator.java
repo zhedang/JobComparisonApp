@@ -27,15 +27,16 @@ public class JobComparator {
         BigDecimal WS = job.getEffectiveWellnessStipend();
         BigDecimal DI = job.getDentalInsurance();
 
-        int totalWeight = settings.getYearlySalary() + settings.getYearlyBonus() + settings.getRelocationAllowance()
-                + settings.getWellnessFund() + settings.getDentalInsurance();
+        int totalWeight = settings.getYearlySalaryWeight() + settings.getYearlyBonusWeight()
+                + settings.getRelocationAllowanceWeight() + settings.getWellnessFundWeight()
+                + settings.getDentalInsuranceWeight();
 
         BigDecimal score = BigDecimal.ZERO;
-        score = score.add(AYS.multiply(new BigDecimal(settings.getYearlySalary())));
-        score = score.add(AYB.multiply(new BigDecimal(settings.getYearlyBonus())));
-        score = score.add(RA.multiply(new BigDecimal(settings.getRelocationAllowance())));
-        score = score.add(WS.multiply(new BigDecimal(settings.getWellnessFund())));
-        score = score.add(DI.multiply(new BigDecimal(settings.getDentalInsurance())));
+        score = score.add(AYS.multiply(new BigDecimal(settings.getYearlySalaryWeight())));
+        score = score.add(AYB.multiply(new BigDecimal(settings.getYearlyBonusWeight())));
+        score = score.add(RA.multiply(new BigDecimal(settings.getRelocationAllowanceWeight())));
+        score = score.add(WS.multiply(new BigDecimal(settings.getWellnessFundWeight())));
+        score = score.add(DI.multiply(new BigDecimal(settings.getDentalInsuranceWeight())));
 
         return score.divide(new BigDecimal(totalWeight), 2, BigDecimal.ROUND_HALF_UP);
     }

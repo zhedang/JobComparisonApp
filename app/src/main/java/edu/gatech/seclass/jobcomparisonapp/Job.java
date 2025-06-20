@@ -1,8 +1,9 @@
 package edu.gatech.seclass.jobcomparisonapp;
 
 import java.math.BigDecimal;
+import java.io.Serializable;
 
-public class Job {
+public class Job implements Serializable {
     private String title;
     private String company;
     private Location location;

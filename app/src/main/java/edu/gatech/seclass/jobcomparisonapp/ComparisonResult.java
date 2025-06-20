@@ -1,19 +1,21 @@
+// File: ComparisonResult.java
 package edu.gatech.seclass.jobcomparisonapp;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 
-public class ComparisonResult {
-    private BigDecimal job1Score;
-    private BigDecimal job2Score;
+public class ComparisonResult implements Serializable {
+    private BigDecimal score1;
+    private BigDecimal score2;
     private Job betterJob;
 
-    public ComparisonResult(BigDecimal job1Score, BigDecimal job2Score, Job betterJob) {
-        this.job1Score = job1Score;
-        this.job2Score = job2Score;
+    public ComparisonResult(BigDecimal score1, BigDecimal score2, Job betterJob) {
+        this.score1 = score1;
+        this.score2 = score2;
         this.betterJob = betterJob;
     }
 
-    public BigDecimal getJob1Score() { return job1Score; }
-    public BigDecimal getJob2Score() { return job2Score; }
+    public BigDecimal getScore1() { return score1; }
+    public BigDecimal getScore2() { return score2; }
     public Job getBetterJob() { return betterJob; }
 }

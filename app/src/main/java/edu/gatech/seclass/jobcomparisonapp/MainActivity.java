@@ -8,7 +8,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    private JobComparisonApp jobApp;
+    public static JobComparisonApp jobApp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

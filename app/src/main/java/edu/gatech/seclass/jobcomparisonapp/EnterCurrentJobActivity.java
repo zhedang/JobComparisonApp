@@ -1,3 +1,4 @@
+// File: EnterCurrentJobActivity.java
 package edu.gatech.seclass.jobcomparisonapp;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -6,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+import java.math.BigDecimal;
 
 public class EnterCurrentJobActivity extends AppCompatActivity {
 
@@ -34,8 +36,29 @@ public class EnterCurrentJobActivity extends AppCompatActivity {
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(EnterCurrentJobActivity.this, "Current Job Saved", Toast.LENGTH_SHORT).show();
-                finish();
+                try {
+                    String title = etTitle.getText().toString();
+                    String company = etCompany.getText().toString();
+                    String city = etCity.getText().toString();
+                    String state = etState.getText().toString();
+                    int costOfLiving = Integer.parseInt(etCostOfLiving.getText().toString());
+
+                    BigDecimal yearlySalary = new BigDecimal(etYearlySalary.getText().toString());
+                    BigDecimal yearlyBonus = new BigDecimal(etYearlyBonus.getText().toString());
+                    BigDecimal wellnessFund = new BigDecimal(etWellnessFund.getText().toString());
+                    BigDecimal dentalInsurance = new BigDecimal(etDentalInsurance.getText().toString());
+                    BigDecimal relocationAllowance = new BigDecimal(etRelocationAllowance.getText().toString());
+
+                    Location location = new Location(city, state, costOfLiving);
+                    Job newJob = new Job(title, company, location, yearlySalary, yearlyBonus, wellnessFund, dentalInsurance, relocationAllowance);
+
+                    MainActivity.jobApp.setCurrentJob(newJob);
+
+                    Toast.makeText(EnterCurrentJobActivity.this, "Current Job Saved", Toast.LENGTH_SHORT).show();
+                    finish();
+                } catch (Exception e) {
+                    Toast.makeText(EnterCurrentJobActivity.this, "Error: Invalid input", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 

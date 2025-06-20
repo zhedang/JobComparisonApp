@@ -13,16 +13,28 @@ public class JobComparisonApp {
         settings = new ComparisonSetting(1, 1, 1, 1, 1); // Default weights
     }
 
-    public void updateCurrentJob(Job job) {
+    public void setCurrentJob(Job job) {
         this.currentJob = job;
     }
 
-    public void updateJobOffers(List<Job> offers) {
-        this.jobOffers = offers;
+    public Job getCurrentJob() {
+        return currentJob;
+    }
+
+    public void addJobOffer(Job jobOffer) {
+        this.jobOffers.add(jobOffer);
+    }
+
+    public List<Job> getJobOffers() {
+        return jobOffers;
     }
 
     public void adjustSettings(ComparisonSetting settings) {
         this.settings = settings;
+    }
+
+    public ComparisonSetting getSettings() {
+        return settings;
     }
 
     public boolean compareEnabled() {

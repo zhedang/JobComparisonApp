@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="24dp"
+    tools:context=".MainActivity">
+
+    <Button
+        android:id="@+id/btnEnterCurrentJob"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Current Job"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnEnterJobOffer"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Enter Job Offer"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnAdjustSettings"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Adjust Settings"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btnCompareJobs"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Compare Jobs"
+        android:layout_marginBottom="16dp"/>
+
+</LinearLayout>

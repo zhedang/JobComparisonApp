@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content">
+
+    <EditText android:id="@+id/etSalaryWeight" android:hint="Salary Weight (0-9)" android:inputType="number" android:layout_width="match_parent" android:layout_height="wrap_content" />
+    <EditText android:id="@+id/etBonusWeight" android:hint="Bonus Weight (0-9)" android:inputType="number" android:layout_width="match_parent" android:layout_height="wrap_content" />
+    <EditText android:id="@+id/etRelocationWeight" android:hint="Relocation Weight (0-9)" android:inputType="number" android:layout_width="match_parent" android:layout_height="wrap_content" />
+    <EditText android:id="@+id/etWellnessWeight" android:hint="Wellness Weight (0-9)" android:inputType="number" android:layout_width="match_parent" android:layout_height="wrap_content" />
+    <EditText android:id="@+id/etDentalWeight" android:hint="Dental Weight (0-9)" android:inputType="number" android:layout_width="match_parent" android:layout_height="wrap_content" />
+
+    <Button android:id="@+id/btnSave" android:text="Save Settings" android:layout_width="match_parent" android:layout_height="wrap_content" />
+    <Button android:id="@+id/btnCancel" android:text="Cancel" android:layout_width="match_parent" android:layout_height="wrap_content" />
+  </LinearLayout>
+</ScrollView>

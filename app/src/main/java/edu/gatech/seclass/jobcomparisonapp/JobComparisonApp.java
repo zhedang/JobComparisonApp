@@ -40,12 +40,4 @@ public class JobComparisonApp {
     public boolean compareEnabled() {
         return currentJob != null && !jobOffers.isEmpty();
     }
-
-    public void compareJobs() {
-        JobComparator comparator = new JobComparator();
-        for (Job offer : jobOffers) {
-            ComparisonResult result = comparator.compare(currentJob, offer, settings);
-            // In a real app, you would store or display the result here.
-        }
-    }
 }

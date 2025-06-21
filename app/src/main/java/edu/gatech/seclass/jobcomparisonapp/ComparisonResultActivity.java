@@ -49,10 +49,10 @@ public class ComparisonResultActivity extends AppCompatActivity {
                 "Company: " + j1.getCompany() + " vs. " + j2.getCompany() + "\n" +
                 "Location: " + j1.getLocation().getCity() + ", " + j1.getLocation().getState() + " vs. " +
                 j2.getLocation().getCity() + ", " + j2.getLocation().getState() + "\n" +
-                "Yearly Salary (Adj): " + j1.getAdjustedYearlySalary() + " vs. " + j2.getAdjustedYearlySalary() + "\n" +
-                "Yearly Bonus (Adj): " + j1.getAdjustedYearlyBonus() + " vs. " + j2.getAdjustedYearlyBonus() + "\n" +
-                "Relocation Allowance (Eff): " + j1.getEffectiveRelocationAllowance() + " vs. " + j2.getEffectiveRelocationAllowance() + "\n" +
-                "Wellness Stipend (Eff): " + j1.getEffectiveWellnessStipend() + " vs. " + j2.getEffectiveWellnessStipend() + "\n" +
+                "Yearly Salary (Adj): " + job1.adjustedYearlySalary + " vs. " + job2.adjustedYearlySalary + "\n" +
+                "Yearly Bonus (Adj): " + job1.adjustedYearlyBonus + " vs. " + job2.adjustedYearlyBonus + "\n" +
+                "Relocation Allowance (Eff): " + job1.effectiveRelocationAllowance + " vs. " + job2.effectiveRelocationAllowance + "\n" +
+                "Wellness Stipend (Eff): " + job1.effectiveWellnessStipend + " vs. " + job2.effectiveWellnessStipend + "\n" +
                 "Dental Insurance: " + j1.getDentalInsurance() + " vs. " + j2.getDentalInsurance() + "\n" +
                 "\nScores: " + job1.score + " vs. " + job2.score;
     }

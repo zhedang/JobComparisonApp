@@ -1,35 +1,31 @@
 package edu.gatech.seclass.jobcomparisonapp;
 
 import java.math.BigDecimal;
-import java.util.List;
-import java.util.Comparator;
-import java.util.stream.Collectors;
 
 public class JobComparator {
 
-    public ComparisonResult compare(Job job1, Job job2, ComparisonSetting settings) {
-        BigDecimal score1 = calculateScore(job1, settings);
-        BigDecimal score2 = calculateScore(job2, settings);
-        Job better = (score1.compareTo(score2) >= 0) ? job1 : job2;
-        return new ComparisonResult(score1, score2, better);
-    }
-
-    public List<Job> rankJobs(List<Job> jobs, ComparisonSetting settings) {
-        return jobs.stream()
-                .sorted(Comparator.comparing((Job job) -> calculateScore(job, settings)).reversed())
-                .collect(Collectors.toList());
-    }
-
-    private BigDecimal calculateScore(Job job, ComparisonSetting settings) {
+    public ScoredJob scoreJob(String label, Job job, ComparisonSetting settings) {
         BigDecimal AYS = job.getAdjustedYearlySalary();
         BigDecimal AYB = job.getAdjustedYearlyBonus();
-        BigDecimal RA = job.getEffectiveRelocationAllowance();
-        BigDecimal WS = job.getEffectiveWellnessStipend();
+
+        // All calculation logic is now centralized here
+        BigDecimal effectiveRA = job.getRelocationAllowance().add(AYS.multiply(new BigDecimal("0.05")));
+        BigDecimal effectiveWS = job.getWellnessFund().add(AYB.multiply(new BigDecimal("0.10")));
         BigDecimal DI = job.getDentalInsurance();
 
+        BigDecimal score = calculateScore(AYS, AYB, effectiveRA, effectiveWS, DI, settings);
+
+        return new ScoredJob(label, job, score, AYS, AYB, effectiveRA, effectiveWS);
+    }
+
+    private BigDecimal calculateScore(BigDecimal AYS, BigDecimal AYB, BigDecimal RA, BigDecimal WS, BigDecimal DI, ComparisonSetting settings) {
         int totalWeight = settings.getYearlySalaryWeight() + settings.getYearlyBonusWeight()
                 + settings.getRelocationAllowanceWeight() + settings.getWellnessFundWeight()
                 + settings.getDentalInsuranceWeight();
+
+        if (totalWeight == 0) {
+            return BigDecimal.ZERO;
+        }
 
         BigDecimal score = BigDecimal.ZERO;
         score = score.add(AYS.multiply(new BigDecimal(settings.getYearlySalaryWeight())));

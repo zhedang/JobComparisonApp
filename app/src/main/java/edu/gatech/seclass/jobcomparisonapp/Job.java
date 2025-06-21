@@ -33,14 +33,6 @@ public class Job implements Serializable {
         return yearlyBonus.multiply(new BigDecimal(100)).divide(new BigDecimal(location.getCostOfLiving()));
     }
 
-    public BigDecimal getEffectiveRelocationAllowance() {
-        return relocationAllowance.add(getAdjustedYearlySalary().multiply(new BigDecimal("0.05")));
-    }
-
-    public BigDecimal getEffectiveWellnessStipend() {
-        return wellnessFund.add(getAdjustedYearlyBonus().multiply(new BigDecimal("0.10")));
-    }
-
     public String getTitle() { return title; }
     public String getCompany() { return company; }
     public Location getLocation() { return location; }

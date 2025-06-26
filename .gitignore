@@ -1,0 +1,18 @@
+# Updated based on A4 Step 3
+*.iml
+.gradle
+local.properties
+.idea/workspace.xml
+.idea/libraries
+.idea
+.DS_Store
+build
+captures
+.externalNativeBuild
+
+# /local.properties
+# /.idea/caches
+# /.idea/modules.xml
+# /.idea/navEditor.xml
+# /.idea/assetWizardSettings.xml
+# .cxx

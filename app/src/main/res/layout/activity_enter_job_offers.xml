@@ -6,10 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
     <!--
-      This layout originally used absolute positioning attributes added by
-      Android Studio's drag-and-drop editor. However, the layout appeared broken at runtime (all views
-      stacked in the top-left corner). To fix this, we use ConstraintLayout
-      constraints to define positioning reliably.
+      This layout references the layout of activity_enter_job_offers
     -->
     <TextView
         android:id="@+id/titleText"
@@ -18,7 +15,7 @@
         android:background="@android:color/holo_blue_dark"
         android:gravity="center"
         android:padding="16dp"
-        android:text="Current Job"
+        android:text="Job Offer"
         android:textColor="@android:color/white"
         android:textSize="28sp"
         android:textStyle="bold"

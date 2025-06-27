@@ -7,12 +7,9 @@
     android:layout_height="match_parent">
     <!--
       This layout originally used absolute positioning attributes added by
-      Android Studio's drag-and-drop editor. However, those attributes only
-      affect the design preview and do not take effect when the app is running.
-
-      As a result, the layout appeared broken at runtime (e.g., all views
-      stacked in the top-left corner). To fix this, proper ConstraintLayout
-      constraints are now used to define positioning reliably.
+      Android Studio's drag-and-drop editor. However, the layout appeared broken at runtime (all views
+      stacked in the top-left corner). To fix this, we use ConstraintLayout
+      constraints to define positioning reliably.
     -->
     <EditText
         android:id="@+id/title"
@@ -121,6 +118,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Save"
+        android:onClick="handleClick"
         app:layout_constraintTop_toBottomOf="@id/relocationAllowance"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -130,6 +128,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Cancel"
+        android:onClick="handleClick"
         app:layout_constraintTop_toBottomOf="@id/save"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"  />

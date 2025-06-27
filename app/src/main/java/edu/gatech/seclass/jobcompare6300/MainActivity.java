@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
     }
-    // Buttons control
+    // Buttons control，using "handleClick" and getId() to know which button is clicked.
     public void handleClick(View view){
         if (view.getId() == R.id.enterCurrentJob){
             Intent intent = new Intent(this, EnterCurrentJob.class);

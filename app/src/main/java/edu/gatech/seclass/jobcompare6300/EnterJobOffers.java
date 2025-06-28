@@ -5,13 +5,8 @@ import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.EditText;
 
-import androidx.activity.EdgeToEdge;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
 import androidx.appcompat.app.AppCompatActivity;
 
 // Setting up EnterCurrentJob navigation
@@ -40,17 +35,19 @@ public class EnterJobOffers extends AppCompatActivity{
             // insert into database
             SQLiteDatabase db = dbHelper.getWritableDatabase();
             ContentValues values = new ContentValues();
-            values.put("title", title.getText().toString());
-            values.put("company", company.getText().toString());
-            values.put("city", city.getText().toString());
-            values.put("state", state.getText().toString());
-            values.put("cost_of_living", Integer.parseInt(cost.getText().toString()));
-            values.put("salary", Double.parseDouble(salary.getText().toString()));
-            values.put("bonus", Double.parseDouble(bonus.getText().toString()));
-            values.put("wellness", Double.parseDouble(wellness.getText().toString()));
-            values.put("dental", Double.parseDouble(dental.getText().toString()));
-            values.put("relocation", Double.parseDouble(relocation.getText().toString()));
-            db.insert("job", null, values);
+            //TODO:Initial build, all inputs are text. Later consider restrict input type
+            values.put(Jobsdb.JobEntry.COLUMN_TITLE, title.getText().toString());
+            values.put(Jobsdb.JobEntry.COLUMN_COMPANY, company.getText().toString());
+            values.put(Jobsdb.JobEntry.COLUMN_CITY, city.getText().toString());
+            values.put(Jobsdb.JobEntry.COLUMN_STATE, state.getText().toString());
+            values.put(Jobsdb.JobEntry.COLUMN_COST_OF_LIVING, Integer.parseInt(cost.getText().toString()));
+            values.put(Jobsdb.JobEntry.COLUMN_SALARY, Double.parseDouble(salary.getText().toString()));
+            values.put(Jobsdb.JobEntry.COLUMN_BONUS, Double.parseDouble(bonus.getText().toString()));
+            values.put(Jobsdb.JobEntry.COLUMN_RELOCATION, Double.parseDouble(relocation.getText().toString()));
+            values.put(Jobsdb.JobEntry.COLUMN_WELLNESS, Double.parseDouble(wellness.getText().toString()));
+            values.put(Jobsdb.JobEntry.COLUMN_DENTAL, Double.parseDouble(dental.getText().toString()));
+
+            db.insert(Jobsdb.JobEntry.TABLE_NAME, null, values);
             db.close();
 
             // save and go back to main screen

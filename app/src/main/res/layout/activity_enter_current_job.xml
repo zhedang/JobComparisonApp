@@ -26,6 +26,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="spread" />
+    <!-- TODO: Initial build, all inputs are text. Later consider restrict input type -->
     <EditText
         android:id="@+id/title"
         android:hint="Job Title"
@@ -97,14 +98,22 @@
         app:layout_constraintTop_toBottomOf="@id/yearlySalary"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
-
+    <EditText
+        android:id="@+id/relocationAllowance"
+        android:hint="Relocation Allowance"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:inputType="text"
+        app:layout_constraintTop_toBottomOf="@id/yearlyBonus"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
     <EditText
         android:id="@+id/wellnessFund"
         android:hint="Wellness Fund"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/yearlyBonus"
+        app:layout_constraintTop_toBottomOf="@id/relocationAllowance"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -118,23 +127,13 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"  />
 
-    <EditText
-        android:id="@+id/relocationAllowance"
-        android:hint="Relocation Allowance"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/dentalInsurance"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
     <Button
         android:id="@+id/save"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Save"
         android:onClick="handleClick"
-        app:layout_constraintTop_toBottomOf="@id/relocationAllowance"
+        app:layout_constraintTop_toBottomOf="@id/dentalInsurance"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

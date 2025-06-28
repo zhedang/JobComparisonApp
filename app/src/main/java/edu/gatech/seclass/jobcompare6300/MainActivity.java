@@ -34,5 +34,9 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(this, EnterJobOffers.class);
             startActivity(intent);
         }
+        if (view.getId() == R.id.adjustSettings){
+            Intent intent = new Intent(this, AdjustSettings.class);
+            startActivity(intent);
+        }
     }
 }

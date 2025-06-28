@@ -5,30 +5,26 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-public class Jobsdbhelper extends SQLiteOpenHelper {
-    // Create Job table
+public class Settingsdbhelper extends SQLiteOpenHelper {
+    // Create Setting table
     //TODO: Later check if enterjoboffers/entercurrentjob inputs types align with below
     private static final String SQL_CREATE_ENTRIES =
-            "CREATE TABLE " + Jobsdb.JobEntry.TABLE_NAME + " (" +
-                    Jobsdb.JobEntry._ID + " INTEGER PRIMARY KEY," +
-                    Jobsdb.JobEntry.COLUMN_TITLE + " TEXT," +
-                    Jobsdb.JobEntry.COLUMN_COMPANY + " TEXT," +
-                    Jobsdb.JobEntry.COLUMN_CITY + " TEXT," +
-                    Jobsdb.JobEntry.COLUMN_STATE + " TEXT," +
-                    Jobsdb.JobEntry.COLUMN_COST_OF_LIVING + " INTEGER," +
-                    Jobsdb.JobEntry.COLUMN_SALARY + " REAL," +
-                    Jobsdb.JobEntry.COLUMN_BONUS + " REAL," +
-                    Jobsdb.JobEntry.COLUMN_RELOCATION + " REAL," +
-                    Jobsdb.JobEntry.COLUMN_WELLNESS + " REAL," +
-                    Jobsdb.JobEntry.COLUMN_DENTAL + " REAL)";
+            "CREATE TABLE " + Settingsdb.SettingEntry.TABLE_NAME + " (" +
+                    Settingsdb.SettingEntry._ID + " INTEGER PRIMARY KEY," +
+
+                    Settingsdb.SettingEntry.COLUMN_SALARY + " REAL," +
+                    Settingsdb.SettingEntry.COLUMN_BONUS + " REAL," +
+                    Settingsdb.SettingEntry.COLUMN_RELOCATION + " REAL," +
+                    Settingsdb.SettingEntry.COLUMN_WELLNESS + " REAL," +
+                    Settingsdb.SettingEntry.COLUMN_DENTAL + " REAL)";
     // For database schema updates
     public static final int DATABASE_VERSION = 1;
-    public static final String DATABASE_NAME = "job.db";
+    public static final String DATABASE_NAME = "setting.db";
     // For table delete
     private static final String SQL_DELETE_ENTRIES =
-            "DROP TABLE IF EXISTS " + Jobsdb.JobEntry.TABLE_NAME;
+            "DROP TABLE IF EXISTS " + Settingsdb.SettingEntry.TABLE_NAME;
     // Initialize helper
-    public Jobsdbhelper(Context context) {
+    public Settingsdbhelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
 

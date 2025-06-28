@@ -5,9 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <!--
-      This layout references the layout of activity_enter_job_offers
-    -->
+
     <TextView
         android:id="@+id/titleText"
         android:layout_width="0dp"
@@ -15,7 +13,7 @@
         android:background="@android:color/holo_blue_dark"
         android:gravity="center"
         android:padding="16dp"
-        android:text="Job Offer"
+        android:text="Adjust Settings"
         android:textColor="@android:color/white"
         android:textSize="28sp"
         android:textStyle="bold"
@@ -23,59 +21,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_chainStyle="spread" />
-
     <!-- TODO: Initial build, all inputs are text. Later consider restrict input type -->
-    <EditText
-        android:id="@+id/title"
-        android:hint="Job Title"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/titleText"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-
-    <EditText
-        android:id="@+id/company"
-        android:hint="Company Name"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/title"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
-
-    <EditText
-        android:id="@+id/city"
-        android:hint="City"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/company"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <EditText
-        android:id="@+id/state"
-        android:hint="State"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/city"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-    <EditText
-        android:id="@+id/costOfLiving"
-        android:hint="Cost of Living"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/state"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <EditText
         android:id="@+id/yearlySalary"
@@ -83,7 +29,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/costOfLiving"
+        app:layout_constraintTop_toBottomOf="@id/titleText"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
